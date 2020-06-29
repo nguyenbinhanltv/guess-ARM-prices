@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "guess-ARM-prices"
+    }
+  },
+  "defaultProject": "guess-ARM-prices",
+  "cli": {
+    "analytics": "2bdf2700-0632-4b65-937c-0a3b335364d1"
+  }
 }
