@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<nz-layout>
+  <nz-header style="width: 100% !important;">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal">
+      <li nz-menu-item routerLink="/home">Home</li>
+      <li nz-menu-item routerLink="/show-data-excel">Data Table</li>
+    </ul>
+  </nz-header>
+  <nz-content style="min-height: 100% !important;">
+    <router-outlet></router-outlet>
+  </nz-content>
+</nz-layout>

@@ -1,5 +1,67 @@
-<nz-upload nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-  [nzHeaders]="{ authorization: 'authorization-text' }" (nzChange)="handleChange($event)">
-  <button nz-button><i nz-icon nzType="upload"></i>Click to Upload</button>
-</nz-upload>
-<input type="file" (change)="onFileChange($event)">
+<nz-page-header class="site-page-header" nzTitle="Tập dữ liệu:" nzSubtitle="Giá cả vật liệu nông nghiệp">
+</nz-page-header>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <input type="file" (change)="onFileChange($event)">
+</div>
+<nz-table #dataTable [nzData]="dataFilesService.data" *ngIf="dataFilesService.data" [nzFrontPagination]="false"
+  [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
+  style="width: 100% !important; min-height: 100% !important;">
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Coarse wool Price</th>
+      <th>Coarse wool price % Change</th>
+      <th>Copra Price</th>
+      <th>Copra price % Change</th>
+      <th>Cotton Price</th>
+      <th>Cotton price % Change</th>
+      <th>Fine wool Price</th>
+      <th>Fine wool price % Change</th>
+      <th>Hard log Price</th>
+      <th>Hard log price % Change</th>
+      <th>Hard sawnwood Price</th>
+      <th>Hard sawnwood price % Change</th>
+      <th>Hide Price</th>
+      <th>Hide price % change</th>
+      <th>Plywood Price</th>
+      <th>Plywood price % Change</th>
+      <th>Rubber Price</th>
+      <th>Rubber price % Change</th>
+      <th>Softlog Price</th>
+      <th>Softlog price % Change</th>
+      <th>Soft sawnwood Price</th>
+      <th>Soft sawnwood price % Change</th>
+      <th>Wood pulp Price</th>
+      <th>Wood pulp price % Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of dataFilesService.data">
+      <td>{{data['Month']}}</td>
+      <td>{{data['Coarse wool Price']}}</td>
+      <td>{{data['Coarse wool price % Change']}}</td>
+      <td>{{data['Copra Price']}}</td>
+      <td>{{data['Copra price % Change']}}</td>
+      <td>{{data['Cotton Price']}}</td>
+      <td>{{data['Cotton price % Change']}}</td>
+      <td>{{data['Fine wool Price']}}</td>
+      <td>{{data['Fine wool price % Change']}}</td>
+      <td>{{data['Hard log Price']}}</td>
+      <td>{{data['Hard log price % Change']}}</td>
+      <td>{{data['Hard sawnwood Price']}}</td>
+      <td>{{data['Hard sawnwood price % Change']}}</td>
+      <td>{{data['Hide Price']}}</td>
+      <td>{{data['Hide price % change']}}</td>
+      <td>{{data['Plywood Price']}}</td>
+      <td>{{data['Plywood price % Change']}}</td>
+      <td>{{data['Rubber Price']}}</td>
+      <td>{{data['Rubber price % Change']}}</td>
+      <td>{{data['Softlog Price']}}</td>
+      <td>{{data['Softlog price % Change']}}</td>
+      <td>{{data['Soft sawnwood Price']}}</td>
+      <td>{{data['Soft sawnwood price % Change']}}</td>
+      <td>{{data['Wood pulp Price']}}</td>
+      <td>{{data['Wood pulp price % Change']}}</td>
+    </tr>
+  </tbody>
+</nz-table>
