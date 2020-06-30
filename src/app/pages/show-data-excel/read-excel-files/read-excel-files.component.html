@@ -1,11 +1,10 @@
-<nz-page-header class="site-page-header" nzTitle="Tập dữ liệu:" nzSubtitle="Giá cả vật liệu nông nghiệp">
+<nz-page-header class="site-page-header" nzTitle="Tập dữ liệu:" nzSubtitle="Giá cả vật liệu nông nghiệp từ năm 1990 - 2010">
 </nz-page-header>
 <div style="display: flex; justify-content: center; align-items: center;">
   <input type="file" (change)="onFileChange($event)">
 </div>
 <nz-table #dataTable [nzData]="dataFilesService.data" *ngIf="dataFilesService.data" [nzFrontPagination]="false"
-  [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
-  style="width: 100% !important; min-height: 100% !important;">
+  [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex">
   <thead>
     <tr>
       <th>Month</th>
